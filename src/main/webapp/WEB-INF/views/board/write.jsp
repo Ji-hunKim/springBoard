@@ -68,7 +68,7 @@
                 <td colspan="2" align="center">
                     <input type="submit" value="작성 완료">
                     <input type="reset" value="다시 작성">
-                    <a href="/">Home</a>
+                    <a href="/board/list">Home</a>
                 </td>
             </tr>
         </table>
