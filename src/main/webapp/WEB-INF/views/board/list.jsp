@@ -7,7 +7,6 @@
 --%>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c"  uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ include file="/WEB-INF/inc/include.jspf"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -91,7 +90,7 @@
 
 <div align="center">
     <h2>목록 보기</h2>
-    <a href="<%= contextPath %>/cstvsboard/write.htm">글쓰기</a>
+    <a href="/board/write">글쓰기</a>
     <table style="width:600px;">
         <thead>
         <tr>
@@ -104,12 +103,12 @@
         </thead>
         <tbody>
         <c:choose>
-            <c:when test="${ not empty list }">
+            <c:when test="${ not empty boardList }">
 
-                <c:forEach items="${ list }" var="dto">
+                <c:forEach items="${ boardList }" var="dto">
                     <tr>
-                        <td>${ dto.seq }</td>
-                        <td><a href="/board/view.htm?seq=${ dto.seq }">${dto.title }</a></td>
+                        <td>${ dto.BId }</td>
+                        <td><a href="#">${dto.title }</a></td>
                         <td><a href="mailto:${ dto.email }">${ dto.writer }</a></td>
                         <td>${ dto.writedate }</td>
                         <td>${ dto.readed }</td>
@@ -129,16 +128,16 @@
             <td colspan="5" align="center">
                 <div class="pagination">
                     <a href="#" class="active"> 1 </a>
-                    <a href="/board/list.htm?currentpage=2"> 2 </a>
-                    <a href="/board/list.htm?currentpage=3"> 3 </a>
-                    <a href="/board/list.htm?currentpage=4"> 4 </a>
-                    <a href="/board/list.htm?currentpage=5"> 5 </a>
-                    <a href="/sboard/list.htm?currentpage=6"> 6 </a>
-                    <a href="/board/list.htm?currentpage=7"> 7 </a>
-                    <a href="/board/list.htm?currentpage=8"> 8 </a>
-                    <a href="/board/list.htm?currentpage=9"> 9 </a>
-                    <a href="/board/list.htm?currentpage=10"> 10 </a>
-                    <a href="/board/list.htm?currentpage=11"> &raquo; </a>
+                    <a href="/board/list?currentpage=2"> 2 </a>
+                    <a href="/board/list?currentpage=3"> 3 </a>
+                    <a href="/board/list?currentpage=4"> 4 </a>
+                    <a href="/board/list?currentpage=5"> 5 </a>
+                    <a href="/board/list?currentpage=6"> 6 </a>
+                    <a href="/board/list?currentpage=7"> 7 </a>
+                    <a href="/board/list?currentpage=8"> 8 </a>
+                    <a href="/board/list?currentpage=9"> 9 </a>
+                    <a href="/board/list?currentpage=10"> 10 </a>
+                    <a href="/board/list?currentpage=11"> &raquo; </a>
                 </div>
             </td>
         </tr>

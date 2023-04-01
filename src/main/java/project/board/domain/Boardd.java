@@ -1,18 +1,12 @@
 package project.board.domain;
 
-import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-import javax.persistence.*;
-import java.sql.Time;
 import java.sql.Timestamp;
 
-@Data
-@Entity(name="board")
-@Builder
-public class Board {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+@Getter@Setter
+public class Boardd {
     private String bId;
 
     private String writer;
@@ -23,10 +17,7 @@ public class Board {
     private Long readed;
     private String content;
 
-    public Board() {
-    }
-
-    public Board(String bId, String writer, String pwd, String email, String title, Timestamp writedate, Long readed, String content) {
+    public Boardd(String bId, String writer, String pwd, String email, String title, Timestamp writedate, Long readed, String content) {
         this.bId = bId;
         this.writer = writer;
         this.pwd = pwd;

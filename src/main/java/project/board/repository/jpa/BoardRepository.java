@@ -5,13 +5,10 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import project.board.domain.Board;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public interface BoardRepository extends JpaRepository<Board, String> {
-    // 1. 글 쓰기
 
-    // 2. 글 목록
-    //ArrayList<Board> select(int currentPage, int numberPerPage );
 
     // 3. 글 상세보기
     // 3-1. 조회수 증가
