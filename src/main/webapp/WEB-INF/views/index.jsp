@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>게시판 프로젝트</title>
 </head>
 <body>
     <a class="btn btn-secondary" href="/board/list" id="homeLink">Home</a>
