@@ -30,7 +30,7 @@ public class BoardController {
     @PostMapping("/write")
     public String saveBoard(@Valid@ModelAttribute("boardForm") BoardForm boardForm){
         boardService.saveBoard(boardForm.getWriter(),boardForm.getPwd(),boardForm.getEmail(),boardForm.getTitle(),boardForm.getContent());
-        return "index";
+        return "board/list";
     }
 
     @GetMapping("/list")
@@ -43,5 +43,12 @@ public class BoardController {
         boardList = boardService.getBoardList(currentpage, numPerPage);
         model.addAttribute("boardList",boardList);
         return "board/list";
+    }
+
+    @GetMapping("/view")
+    public String viewBoard(@RequestParam Long seq, Model model) {
+        Board board = boardService.getBoard(seq);
+        model.addAttribute("board", board);
+        return "board/view";
     }
 }

@@ -9,4 +9,5 @@ import java.util.List;
 @Mapper
 public interface BoardMapper {
     List<Boardd> selectBoard(int begin, int numPerPage);
+    void increaseReaded(Long seq);
 }

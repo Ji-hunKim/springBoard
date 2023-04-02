@@ -105,13 +105,13 @@
         <c:choose>
             <c:when test="${ not empty boardList }">
 
-                <c:forEach items="${ boardList }" var="dto">
+                <c:forEach items="${ boardList }" var="board">
                     <tr>
-                        <td>${ dto.BId }</td>
-                        <td><a href="#">${dto.title }</a></td>
-                        <td><a href="mailto:${ dto.email }">${ dto.writer }</a></td>
-                        <td>${ dto.writedate }</td>
-                        <td>${ dto.readed }</td>
+                        <td>${ board.BId }</td>
+                        <td><a href="/board/view?seq=${board.BId}">${board.title }</a></td>
+                        <td><a href="mailto:${ board.email }">${ board.writer }</a></td>
+                        <td>${ board.writedate }</td>
+                        <td>${ board.readed }</td>
                     </tr>
                 </c:forEach>
 
