@@ -3,23 +3,32 @@ package project.board.service;
 import org.springframework.stereotype.Service;
 import project.board.domain.Board;
 import project.board.domain.Boardd;
+import project.board.domain.PageBlock;
 import project.board.repository.jpa.JpaBoardRepository;
 import project.board.repository.mybatis.BoardMapper;
+import project.board.repository.mybatis.PagingMapper;
 
+import javax.transaction.Transactional;
+import java.sql.Timestamp;
 import java.util.List;
 
 @Service
 public class BoardService {
     private final JpaBoardRepository jpaBoardRepository;
     private final BoardMapper boardMapper;
+    private final PagingMapper pagingMapper;
 
-    public BoardService(JpaBoardRepository jpaBoardRepository, BoardMapper boardMapper) {
+    public BoardService(JpaBoardRepository jpaBoardRepository, BoardMapper boardMapper, PagingMapper pagingMapper) {
         this.jpaBoardRepository = jpaBoardRepository;
         this.boardMapper = boardMapper;
+        this.pagingMapper = pagingMapper;
     }
 
     public void saveBoard(String writer, String pwd, String email, String title, String content){
-        Board board = Board.builder().bId("DEFAULT").writer(writer).pwd(pwd).email(email).title(title)
+        Long datetime = System.currentTimeMillis();
+        Timestamp timestamp = new Timestamp(datetime);
+
+        Board board = Board.builder().writer(writer).pwd(pwd).email(email).title(title).writedate(timestamp)
                 .readed(0L).content(content).build();
         jpaBoardRepository.save(board);
     }
@@ -30,8 +39,29 @@ public class BoardService {
         return boardList;
     }
 
+    @Transactional
     public Board getBoard(Long seq){
-        Board board = jpaBoardRepository.findById(seq);
+        boardMapper.increaseReaded(seq);
+        Board board = jpaBoardRepository.findBybId(seq);
         return board;
+    }
+
+    @Transactional
+    public PageBlock pagingService(int currentPage, int numPerPage, int numOfPageBlock, int SearchCondition, String searchWord){
+
+        PageBlock pageBlock = null;
+
+        int totalRecords = 0;
+        int totalPages = 1;
+
+        if(searchWord == ""){
+            totalRecords = pagingMapper.getTotalRecords();
+            totalPages = pagingMapper.getTotalRecords();
+        }else{
+            totalRecords = pagingMapper.getTotalRecords();
+            totalPages = pagingMapper.getTotalRecords();
+        }
+
+        return pageBlock;
     }
 }

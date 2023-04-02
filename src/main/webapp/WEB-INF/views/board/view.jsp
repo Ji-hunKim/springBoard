@@ -63,9 +63,9 @@
         </tr>
         <tr>
             <td colspan="4" align="center">
-                <a class="btn btn-secondary" href="/board/edit?seq=${ board.Bid }"
+                <a class="btn btn-secondary" href="/board/edit?seq=${ board.BId }"
                    id="editLink">수정하기</a>
-                <a class="btn btn-secondary" href="/board/delete?seq=${ board.Bid }"
+                <a class="btn btn-secondary" href="/board/delete?seq=${ board.BId }"
                    id="deleteLink">삭제하기</a>
                 <a class="btn btn-secondary" href="/board/list" id="homeLink">Home</a>
 

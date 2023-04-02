@@ -30,7 +30,7 @@ public class BoardController {
     @PostMapping("/write")
     public String saveBoard(@Valid@ModelAttribute("boardForm") BoardForm boardForm){
         boardService.saveBoard(boardForm.getWriter(),boardForm.getPwd(),boardForm.getEmail(),boardForm.getTitle(),boardForm.getContent());
-        return "board/list";
+        return "redirect:/board/list";
     }
 
     @GetMapping("/list")

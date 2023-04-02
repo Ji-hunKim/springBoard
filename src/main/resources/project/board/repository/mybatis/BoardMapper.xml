@@ -2,10 +2,15 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="project.board.repository.mybatis.BoardMapper">
-    <select id="selectBoard" resultType="Boardd">
+    <select id="selectBoard" parameterType="int" resultType="Boardd">
         select b_id, writer, pwd, email, title, writedate, readed, content
         from board
         order by b_id desc
         limit #{begin}, #{numPerPage}
     </select>
+    <update id="increaseReaded" parameterType="Long">
+        update board
+        set readed  = readed + 1
+        where b_id = #{seq}
+    </update>
 </mapper>

@@ -5,5 +5,5 @@ import project.board.domain.Board;
 
 
 public interface JpaBoardRepository extends JpaRepository<Board, String> {
-    Board findById(Long seq);
+    Board findBybId(Long seq);
 }

@@ -6,7 +6,7 @@ import javax.transaction.Transactional;
 
 @Repository
 @Transactional
-public class BoardRepositoryImpl {
+public class BoardRepositoryImpl implements BoardRepository{
     private final JpaBoardRepository jpaBoardRepository;
 
     public BoardRepositoryImpl(JpaBoardRepository jpaBoardRepository) {

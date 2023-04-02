@@ -7,7 +7,7 @@ import java.sql.Timestamp;
 
 @Getter@Setter
 public class Boardd {
-    private String bId;
+    private Long bId;
 
     private String writer;
     private String pwd;
@@ -17,7 +17,7 @@ public class Boardd {
     private Long readed;
     private String content;
 
-    public Boardd(String bId, String writer, String pwd, String email, String title, Timestamp writedate, Long readed, String content) {
+    public Boardd(Long bId, String writer, String pwd, String email, String title, Timestamp writedate, Long readed, String content) {
         this.bId = bId;
         this.writer = writer;
         this.pwd = pwd;
