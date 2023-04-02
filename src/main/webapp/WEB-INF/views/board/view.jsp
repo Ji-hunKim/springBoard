@@ -36,7 +36,6 @@
 </head>
 <body>
 <div align="center">
-    <h2>내용보기</h2>
     <!-- <table id="tblContent" class="table"> -->
     <table id="tblContent">
         <tr>

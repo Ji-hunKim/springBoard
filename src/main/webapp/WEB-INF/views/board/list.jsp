@@ -87,7 +87,6 @@
     </style>
 </head>
 <body>
-<h3>list.jsp</h3>
 
 <div align="center">
     <h2>목록 보기</h2>

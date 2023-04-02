@@ -37,7 +37,6 @@
 <h3>edit.jsp</h3>
 
 <div align="center">
-  <h2>글 수정</h2>
 
   <form method="post">
 
