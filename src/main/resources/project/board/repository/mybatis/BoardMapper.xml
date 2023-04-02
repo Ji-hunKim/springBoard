@@ -13,4 +13,18 @@
         set readed  = readed + 1
         where b_id = #{seq}
     </update>
+    <select id="getPwd" resultType="String">
+        select pwd
+        from board
+        where b_id = #{seq}
+    </select>
+    <delete id="deleteBoard">
+        delete from board
+        where b_id = #{seq}
+    </delete>
+    <update id="updateBoard">
+        update board
+        set writer= #{writer}, pwd = #{pwd}, email = #{email}, title = #{title}, content = #{content}
+        where b_id = #{seq}
+    </update>
 </mapper>

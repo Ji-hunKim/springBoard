@@ -13,8 +13,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>2022. 12. 8. 오후 4:45:18</title>
-    <link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css" />
     <style>
         table, td, th {
             border: solid 1px gray;
@@ -158,3 +159,11 @@
         </tfoot>
     </table>
 </div>
+
+<script>
+    if ('<%=  request.getParameter("delete") %>' == 'success') {
+        alert("글 삭제 완료!!!")
+    } else if ('<%=  request.getParameter("delete") %>' == 'fail') {
+        alert("글 삭제 실패( 비밀번호 잘못)!!!")
+    }
+</script>

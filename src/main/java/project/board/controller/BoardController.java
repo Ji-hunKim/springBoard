@@ -1,5 +1,6 @@
 package project.board.controller;
 
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -50,5 +51,25 @@ public class BoardController {
         Board board = boardService.getBoard(seq);
         model.addAttribute("board", board);
         return "board/view";
+    }
+
+    @PostMapping("/delete")
+    public String deleteBoard(@RequestParam("seq") Long seq, @RequestParam("pwd") String pwd){
+        String isSuccess = boardService.deleteBoard(seq, pwd);
+        return "redirect:/board/list?delete="+isSuccess;
+    }
+
+    @GetMapping("/edit")
+    public String addEditForm(@RequestParam Long seq, Model model) {
+        Board board = boardService.getBoard(seq);
+        model.addAttribute("board", board);
+        return "board/edit";
+    }
+
+    @PostMapping("/edit")
+    public String editBoard(@Valid@ModelAttribute("boardForm") BoardForm boardForm, @RequestParam("seq") Long seq ){
+        boardService.editBoard(seq, boardForm.getWriter(), boardForm.getPwd(), boardForm.getEmail(),
+                boardForm.getTitle(), boardForm.getContent());
+        return "redirect:/board/list";
     }
 }

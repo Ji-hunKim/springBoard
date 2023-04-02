@@ -10,4 +10,8 @@ import java.util.List;
 public interface BoardMapper {
     List<Boardd> selectBoard(@Param("begin") int begin, @Param("numPerPage") int numPerPage);
     void increaseReaded(Long seq);
+    String getPwd(Long seq);
+    void deleteBoard(Long seq);
+    void updateBoard(@Param("seq")Long seq, @Param("writer") String writer, @Param("pwd") String pwd,
+                     @Param("email") String email, @Param("title") String title, @Param("content") String content);
 }

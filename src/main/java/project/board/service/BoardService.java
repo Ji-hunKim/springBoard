@@ -46,6 +46,23 @@ public class BoardService {
         return board;
     }
 
+    public String deleteBoard(Long seq, String pwd){
+        String originPwd = boardMapper.getPwd(seq);
+        if(originPwd.equals(pwd)) {
+            boardMapper.deleteBoard(seq);
+            return "success";
+        }
+        else{
+            return "fail";
+        }
+    }
+
+
+    public void editBoard(Long seq,String writer, String pwd, String email, String title, String content ){
+        boardMapper.updateBoard(seq, writer, pwd, email, title, content);
+    }
+
+
     @Transactional
     public PageBlock pagingService(int currentPage, int numPerPage, int numOfPageBlock, int SearchCondition, String searchWord){
 

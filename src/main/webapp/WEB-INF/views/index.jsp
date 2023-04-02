@@ -11,6 +11,6 @@
     <title>Title</title>
 </head>
 <body>
-hello!
+    <a class="btn btn-secondary" href="/board/list" id="homeLink">Home</a>
 </body>
 </html>

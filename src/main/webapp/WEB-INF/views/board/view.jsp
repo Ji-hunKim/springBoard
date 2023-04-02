@@ -13,11 +13,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>2022. 12. 8. 오후 3:28:25</title>
-    <link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-<style>
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css" />
+    <style>
     table {
-        border-spacing: 3px;
+        border-spacing: 3px;d
         border-collapse: separate;
     }
 
@@ -65,8 +66,6 @@
             <td colspan="4" align="center">
                 <a class="btn btn-secondary" href="/board/edit?seq=${ board.BId }"
                    id="editLink">수정하기</a>
-                <a class="btn btn-secondary" href="/board/delete?seq=${ board.BId }"
-                   id="deleteLink">삭제하기</a>
                 <a class="btn btn-secondary" href="/board/list" id="homeLink">Home</a>
 
                 <input class="btn btn-secondary" type="button" id="btnModalDelete" value="모달창으로 글삭제">
@@ -78,7 +77,7 @@
 <!-- 삭제 모달창 div 태그 -->
 <div id="dialog-form" align="center" title="삭제">
     <h2>삭제하기</h2>
-    <form method="post" action="board/delete?seq=${ param.seq}">
+    <form method="post" action="/board/delete?seq=${board.BId}">
         <table>
             <tr>
                 <td colspan="2" align="center"><b>글을 삭제합니다</b></td>
@@ -112,7 +111,6 @@
         }
     });
 
-    //2.
     form = dialog.find("form");
 
     // 3. 모달창 열기
@@ -125,12 +123,3 @@
     })
 </script>
 
-<script>
-    // view.jsp
-    // edit.htm?seq=350&edit=success
-    if ('<%=  request.getParameter("edit") %>' == 'success') {
-        alert("글 수정 완료!!!")
-    } else if ('<%=  request.getParameter("edit") %>' == 'fail') {
-        alert("글 수정 실패( 비밀번호 잘못)!!!")
-    }
-</script>
