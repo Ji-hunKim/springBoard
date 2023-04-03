@@ -10,7 +10,7 @@ public class PageBlock {
     private int numOfPageBlock = 10;    // 페이징 블럭 수
     private int startOfPageBlock = 1;      // 시작 번호    1 2 [3] 4 5 6 7 8 9 10 >
     private int endOfPageBlock ;           // 끝 번호
-    private boolean prev, next;            // 이전 버트, 다음 버튼
+    private boolean prev, next;            // 이전 버튼, 다음 버튼
 
     public PageBlock() {
         super();

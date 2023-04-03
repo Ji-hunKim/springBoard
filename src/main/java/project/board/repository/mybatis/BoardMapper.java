@@ -9,6 +9,11 @@ import java.util.List;
 @Mapper
 public interface BoardMapper {
     List<Boardd> selectBoard(@Param("begin") int begin, @Param("numPerPage") int numPerPage);
+    List<Boardd> selectBoardTitle(@Param("begin") int begin, @Param("numPerPage") int numPerPage, @Param("searchWord") String searchWord);
+    List<Boardd> selectBoardContent(@Param("begin") int begin, @Param("numPerPage") int numPerPage, @Param("searchWord") String searchWord);
+    List<Boardd> selectBoardWriter(@Param("begin") int begin, @Param("numPerPage") int numPerPage, @Param("searchWord") String searchWord);
+    List<Boardd> selectBoardBoth(@Param("begin") int begin, @Param("numPerPage") int numPerPage, @Param("searchWord") String searchWord);
+
     void increaseReaded(Long seq);
     String getPwd(Long seq);
     void deleteBoard(Long seq);

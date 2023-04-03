@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import project.board.domain.Board;
 import project.board.domain.Boardd;
+import project.board.domain.PageBlock;
 import project.board.service.BoardService;
 import project.board.web.BoardForm;
 
@@ -35,14 +36,26 @@ public class BoardController {
     }
 
     @GetMapping("/list")
-    public String showBoardList(@RequestParam(required = false) Integer currentpage, Model model){
+    public String showBoardList(@RequestParam(required = false) Integer currentpage, @RequestParam(required = false) Integer searchCondition,
+                                @RequestParam(required = false) String searchWord,  Model model){
 
         if(currentpage == null) currentpage = 1;
 
-        int numPerPage = 10;
+        int numPerPage = 10;      // 한페이지에 출력할 게시글
+        int numOfPageBlock = 10;  // 페이징 블럭수
+
+        if(searchCondition == null) searchCondition = 1;
+        if(searchWord == null) searchWord = "";
+
+
         List<Boardd> boardList = null;
-        boardList = boardService.getBoardList(currentpage, numPerPage);
+        PageBlock pageBlock = null;
+
+        boardList = boardService.getBoardList(currentpage, numPerPage, searchCondition, searchWord);
+        pageBlock = boardService.pagingService(currentpage, numPerPage, numOfPageBlock, searchCondition, searchWord);
+
         model.addAttribute("boardList",boardList);
+        model.addAttribute("pageBlock", pageBlock);
         return "board/list";
     }
 

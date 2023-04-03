@@ -10,4 +10,44 @@
         select ceil(count(*)/#{numPerPage})
         from board
     </select>
+    <select id="getTotalRecordsTitle" resultType="int">
+        select count(*)
+        from board
+        where title like CONCAT('%',#{searchWord},'%')
+    </select>
+    <select id="getTotalPagesTitle" resultType="int">
+        select ceil(count(*)/#{numPerPage})
+        from board
+        where title like CONCAT('%',#{searchWord},'%')
+    </select>
+    <select id="getTotalRecordsContent" resultType="int">
+        select count(*)
+        from board
+        where content like CONCAT('%',#{searchWord},'%')
+    </select>
+    <select id="getTotalPagesContent" resultType="int">
+        select ceil(count(*)/#{numPerPage})
+        from board
+        where content like CONCAT('%',#{searchWord},'%')
+    </select>
+    <select id="getTotalRecordsWriter" resultType="int">
+        select count(*)
+        from board
+        where writer like CONCAT('%',#{searchWord},'%')
+    </select>
+    <select id="getTotalPagesWriter" resultType="int">
+        select ceil(count(*)/#{numPerPage})
+        from board
+        where writer like CONCAT('%',#{searchWord},'%')
+    </select>
+    <select id="getTotalRecordsBoth" resultType="int">
+        select count(*)
+        from board
+        where title like CONCAT('%',#{searchWord},'%') or content like CONCAT('%',#{searchWord},'%')
+    </select>
+    <select id="getTotalPagesBoth" resultType="int">
+        select ceil(count(*)/#{numPerPage})
+        from board
+        where title like CONCAT('%',#{searchWord},'%') or content like CONCAT('%',#{searchWord},'%')
+    </select>
 </mapper>

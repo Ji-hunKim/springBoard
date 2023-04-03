@@ -8,6 +8,34 @@
         order by b_id desc
         limit #{begin}, #{numPerPage}
     </select>
+    <select id="selectBoardTitle" resultType="Boardd">
+        select b_id, writer, pwd, email, title, writedate, readed, content
+        from board
+        where title like CONCAT('%',#{searchWord},'%')
+        order by b_id desc
+        limit #{begin}, #{numPerPage}
+    </select>
+    <select id="selectBoardContent" resultType="Boardd">
+        select b_id, writer, pwd, email, title, writedate, readed, content
+        from board
+        where content like CONCAT('%',#{searchWord},'%')
+        order by b_id desc
+        limit #{begin}, #{numPerPage}
+    </select>
+    <select id="selectBoardWriter" resultType="Boardd">
+        select b_id, writer, pwd, email, title, writedate, readed, content
+        from board
+        where writer like CONCAT('%',#{searchWord},'%')
+        order by b_id desc
+        limit #{begin}, #{numPerPage}
+    </select>
+    <select id="selectBoardBoth" resultType="Boardd">
+        select b_id, writer, pwd, email, title, writedate, readed, content
+        from board
+        where title like CONCAT('%',#{searchWord},'%') or content like CONCAT('%',#{searchWord},'%')
+        order by b_id desc
+        limit #{begin}, #{numPerPage}
+    </select>
     <update id="increaseReaded" parameterType="Long">
         update board
         set readed  = readed + 1

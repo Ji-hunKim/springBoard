@@ -89,7 +89,7 @@
 <body>
 
 <div align="center">
-    <h2>목록 보기</h2>
+    <h2><a class="btn btn-secondary" href="/board/list" id="homeLink">목록 보기</a></h2>
     <a href="/board/write">글쓰기</a>
     <table style="width:600px;">
         <thead>
@@ -127,17 +127,22 @@
         <tr>
             <td colspan="5" align="center">
                 <div class="pagination">
-                    <a href="#" class="active"> 1 </a>
-                    <a href="/board/list?currentpage=2"> 2 </a>
-                    <a href="/board/list?currentpage=3"> 3 </a>
-                    <a href="/board/list?currentpage=4"> 4 </a>
-                    <a href="/board/list?currentpage=5"> 5 </a>
-                    <a href="/board/list?currentpage=6"> 6 </a>
-                    <a href="/board/list?currentpage=7"> 7 </a>
-                    <a href="/board/list?currentpage=8"> 8 </a>
-                    <a href="/board/list?currentpage=9"> 9 </a>
-                    <a href="/board/list?currentpage=10"> 10 </a>
-                    <a href="/board/list?currentpage=11"> &raquo; </a>
+                    <c:if test="${ pageBlock.prev }">
+                        <a href="/board/list?currentpage=${  pageBlock.startOfPageBlock - 1  }"> &laquo; </a>
+                    </c:if>
+                    <c:forEach begin="${  pageBlock.startOfPageBlock  }" end="${  pageBlock.endOfPageBlock  }" var="i" step="1">
+                        <c:choose>
+                            <c:when test="${ pageBlock.currentPage eq i }">
+                                <a href="#" class="active">${ i }</a>
+                            </c:when>
+                            <c:otherwise>
+                                <a href="/board/list?currentpage=${ i }">${ i }</a>
+                            </c:otherwise>
+                        </c:choose>
+                    </c:forEach>
+                    <c:if test="${ pageBlock.next }">
+                        <a href="/board/list?currentpage=${  pageBlock.endOfPageBlock + 1  }"> &raquo; </a>
+                    </c:if>
                 </div>
             </td>
         </tr>
@@ -165,4 +170,16 @@
     } else if ('<%=  request.getParameter("delete") %>' == 'fail') {
         alert("글 삭제 실패( 비밀번호 잘못)!!!")
     }
+</script>
+
+<script>
+    // 검색 상태 관리
+    $("#searchCondition").val(   '${  empty param.searchCondition? 1 :  param.searchCondition }'        );
+    $("#searchWord").val( '${ param.searchWord}' );
+</script>
+
+<script>
+    $(".pagination a:not(.active)").attr("href" , function (i,val){
+        return val + "&searchCondition=${ param.searchCondition}&searchWord=${ param.searchWord}";
+    });
 </script>

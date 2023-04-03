@@ -33,9 +33,31 @@ public class BoardService {
         jpaBoardRepository.save(board);
     }
 
-    public List<Boardd> getBoardList(int currentPage, int numPerPage){
+    public List<Boardd> getBoardList(int currentPage, int numPerPage, int searchCondition, String searchWord){
+
+        List<Boardd> boardList = null;
         int begin = (currentPage-1)*numPerPage;
-        List<Boardd> boardList = boardMapper.selectBoard(begin, numPerPage);
+
+        if(searchWord == ""){
+            boardList = boardMapper.selectBoard(begin, numPerPage);
+        }else{
+            switch (searchCondition) {
+                case 1: // 제목
+                    boardList = boardMapper.selectBoardTitle(begin, numPerPage, searchWord);
+                    break;
+                case 2:  // 내용
+                    boardList = boardMapper.selectBoardContent(begin, numPerPage, searchWord);
+                    break;
+                case 3: // 작성자
+                    boardList = boardMapper.selectBoardWriter(begin, numPerPage, searchWord);
+                    break;
+                case 4:  // 제목 + 내용
+                    boardList = boardMapper.selectBoardBoth(begin, numPerPage, searchWord);
+                    break;
+            }
+        }
+
+
         return boardList;
     }
 
@@ -64,7 +86,7 @@ public class BoardService {
 
 
     @Transactional
-    public PageBlock pagingService(int currentPage, int numPerPage, int numOfPageBlock, int SearchCondition, String searchWord){
+    public PageBlock pagingService(int currentPage, int numPerPage, int numOfPageBlock, int searchCondition, String searchWord){
 
         PageBlock pageBlock = null;
 
@@ -73,11 +95,36 @@ public class BoardService {
 
         if(searchWord == ""){
             totalRecords = pagingMapper.getTotalRecords();
-            totalPages = pagingMapper.getTotalRecords();
+            totalPages = pagingMapper.getTotalPages(numPerPage);
         }else{
-            totalRecords = pagingMapper.getTotalRecords();
-            totalPages = pagingMapper.getTotalRecords();
+            switch (searchCondition) {
+                case 1: // 제목
+                    totalRecords = pagingMapper.getTotalRecordsTitle(searchWord);
+                    totalPages = pagingMapper.getTotalPagesTitle(numPerPage, searchWord);
+                    break;
+                case 2:  // 내용
+                    totalRecords = pagingMapper.getTotalRecordsContent(searchWord);
+                    totalPages = pagingMapper.getTotalPagesContent(numPerPage, searchWord);
+                    break;
+                case 3: // 작성자
+                    totalRecords = pagingMapper.getTotalRecordsWriter(searchWord);
+                    totalPages = pagingMapper.getTotalPagesWriter(numPerPage, searchWord);
+                    break;
+                case 4:  // 제목 + 내용
+                    totalRecords = pagingMapper.getTotalRecordsBoth(searchWord);
+                    totalPages = pagingMapper.getTotalPagesBoth(numPerPage, searchWord);
+                    break;
+            }
         }
+
+        int begin = ( currentPage - 1)/numOfPageBlock * numOfPageBlock + 1;
+        int end    = begin + numOfPageBlock - 1;
+        if( end > totalPages )  end = totalPages;
+
+        boolean prev =   begin == 1 ?  false : true;
+        boolean next  =  end == totalPages ? false: true;
+
+        pageBlock = new PageBlock(currentPage, numPerPage, numOfPageBlock ,begin, end, prev,  next);
 
         return pageBlock;
     }
