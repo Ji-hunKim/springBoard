@@ -6,21 +6,17 @@
    * **[게시글 검색](#검색)**
 
 ---
-## 사용 언어
+## 개발 환경
 
-|    Java    |          JSP        |
-| :--------: |        :--------:       |
-|     11     |     html 기반, jstl |
+|    Java    |  Spring boot    |        JSP            |   MySQL       |
+| :--------: | :--------:      |      :--------:       | :--------:    |
+|     11     |     Gradle      |   html 기반, jstl      |  JPA, Mybatis |
 
 ---
 
-## 개발 환경
-* Spring boot (Gradle)
-* Java 11
-* MySQL
-* JPA
-* JSP
+## Tools
 * IntelliJ
+* Git
 
 ---
 ## CRUD
