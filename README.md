@@ -18,6 +18,9 @@
 * IntelliJ
 * Git
 
+--
+## 시연영상 (Video)
+- [Link](https://www.youtube.com/watch?v=JKFxuTtCB_E)<br>
 ---
 ## CRUD
 <img width="654" alt="Screen Shot 2023-04-09 at 12 48 24 AM" src="https://user-images.githubusercontent.com/68188361/230730679-89f61d73-3a79-4a68-915a-04745b131e38.png"><br>
