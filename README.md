@@ -19,6 +19,7 @@
 * Git
 
 ---
+<br>
 ## CRUD
 <img width="654" alt="Screen Shot 2023-04-09 at 12 48 24 AM" src="https://user-images.githubusercontent.com/68188361/230730679-89f61d73-3a79-4a68-915a-04745b131e38.png">
 - [x] 게시글 목록 불러오기
@@ -30,7 +31,7 @@
 - [x] 게시글 수정
 <img width="635" alt="Screen Shot 2023-04-09 at 12 54 15 AM" src="https://user-images.githubusercontent.com/68188361/230730793-10baca54-7364-4a1e-bbf7-ea9a578b41da.png">
 - [x] 게시글 삭제
-
+<br>
 ## 페이징
 
 <img width="66" alt="Screen Shot 2023-04-09 at 12 55 52 AM" src="https://user-images.githubusercontent.com/68188361/230730855-f2d01886-c571-4484-9c71-284ca7ce9780.png"><br>
