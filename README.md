@@ -18,7 +18,7 @@
 * IntelliJ
 * Git
 
---
+---
 ## 시연영상 (Video)
 - [Link](https://www.youtube.com/watch?v=JKFxuTtCB_E)<br>
 ---
