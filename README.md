@@ -20,24 +20,15 @@
 
 ---
 ## CRUD
-<br>
-<img width="654" alt="Screen Shot 2023-04-09 at 12 48 24 AM" src="https://user-images.githubusercontent.com/68188361/230730679-89f61d73-3a79-4a68-915a-04745b131e38.png"><br>
+<img width="654" alt="Screen Shot 2023-04-09 at 12 48 24 AM" src="https://user-images.githubusercontent.com/68188361/230730679-89f61d73-3a79-4a68-915a-04745b131e38.png">
 - [x] 게시글 목록 불러오기
-<br>
-<br>
-<img width="622" alt="Screen Shot 2023-04-09 at 12 54 21 AM" src="https://user-images.githubusercontent.com/68188361/230730815-518032d8-d99e-430c-9151-926e4e9b378a.png"><br>
+<img width="622" alt="Screen Shot 2023-04-09 at 12 54 21 AM" src="https://user-images.githubusercontent.com/68188361/230730815-518032d8-d99e-430c-9151-926e4e9b378a.png">
 - [x] 게시글 불러오기
-<br>
-<br>
-<img width="657" alt="Screen Shot 2023-04-09 at 12 48 46 AM" src="https://user-images.githubusercontent.com/68188361/230730737-92c46df0-cbd6-4f94-b7a1-bc3b39e74eab.png"><br>
+<img width="657" alt="Screen Shot 2023-04-09 at 12 48 46 AM" src="https://user-images.githubusercontent.com/68188361/230730737-92c46df0-cbd6-4f94-b7a1-bc3b39e74eab.png">
 - [x] 게시글 작성
-<br>
-<br>
-<img width="632" alt="Screen Shot 2023-04-09 at 12 50 06 AM" src="https://user-images.githubusercontent.com/68188361/230730759-2b2d5066-4e36-44b0-b56f-5053057c5ac1.png"><br>
+<img width="632" alt="Screen Shot 2023-04-09 at 12 50 06 AM" src="https://user-images.githubusercontent.com/68188361/230730759-2b2d5066-4e36-44b0-b56f-5053057c5ac1.png">
 - [x] 게시글 수정
-<br>
-<br>
-<img width="635" alt="Screen Shot 2023-04-09 at 12 54 15 AM" src="https://user-images.githubusercontent.com/68188361/230730793-10baca54-7364-4a1e-bbf7-ea9a578b41da.png"><br>
+<img width="635" alt="Screen Shot 2023-04-09 at 12 54 15 AM" src="https://user-images.githubusercontent.com/68188361/230730793-10baca54-7364-4a1e-bbf7-ea9a578b41da.png">
 - [x] 게시글 삭제
 
 ## 페이징
