@@ -20,6 +20,7 @@
 
 ---
 ## CRUD
+<br>
 <img width="654" alt="Screen Shot 2023-04-09 at 12 48 24 AM" src="https://user-images.githubusercontent.com/68188361/230730679-89f61d73-3a79-4a68-915a-04745b131e38.png"><br>
 - [x] 게시글 목록 불러오기
 <br>
@@ -50,7 +51,7 @@
 
 ## 검색
 
-- [x] 조건별 (제목, 내용, 작성자, 제목+내용) 검색 가능
+- [x] 조건별 (제목, 내용, 작성자, 제목+내용) 검색 가능<br>
 <img width="645" alt="Screen Shot 2023-04-09 at 12 49 18 AM" src="https://user-images.githubusercontent.com/68188361/230730935-92f28d0c-66da-4221-b916-37e7ac4f14a5.png"><br>
 - [x] 조건별 (제목) 검색 가능
 <br>
