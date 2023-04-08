@@ -33,11 +33,11 @@
 <br>
 <br>
 <img width="632" alt="Screen Shot 2023-04-09 at 12 50 06 AM" src="https://user-images.githubusercontent.com/68188361/230730759-2b2d5066-4e36-44b0-b56f-5053057c5ac1.png"><br>
-ㄴ[x] 게시글 수정
+ㄴ게시글 수정
 <br>
 <br>
 <img width="635" alt="Screen Shot 2023-04-09 at 12 54 15 AM" src="https://user-images.githubusercontent.com/68188361/230730793-10baca54-7364-4a1e-bbf7-ea9a578b41da.png"><br>
-ㄴ[x] 게시글 삭제
+ㄴ게시글 삭제
 
 ## 페이징
 <img width="66" alt="Screen Shot 2023-04-09 at 12 55 52 AM" src="https://user-images.githubusercontent.com/68188361/230730855-f2d01886-c571-4484-9c71-284ca7ce9780.png"><br>
